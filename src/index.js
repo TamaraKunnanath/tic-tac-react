@@ -144,6 +144,7 @@ function calculateWinner(squares) {
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      highlight(a,b,c);
       return squares[a];
     }
   }
@@ -154,9 +155,13 @@ function calculateDraw(squares){
 
   for(let i = 0; i < 9; i++) {
     if (squares[i] !== "X" && squares[i] !== "O"){
-      console.log(squares[i] !== "X" || squares[i] !== "O");
       return false;
     } 
   }
   return true;
+}
+
+function highlight(i,j,k) {
+  // TODO
+  return;
 }
